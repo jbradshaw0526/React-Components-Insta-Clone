@@ -9,23 +9,23 @@ const Post = props => {
 
   return (
     <div className='post-border'>
-      <PostHeader
-        username={post.username}
-        thumbnailUrl={post.thumbnailUrl}
-      />
-      <div className='post-image-wrapper'>
-        <img
-          alt='post thumbnail'
-          className='post-image'
-          src={post.imageUrl}
+        <PostHeader
+            username={props.post.username}
+            thumbnailUrl={props.post.thumbnailUrl}
         />
-      </div>
-      {/* Is LikeSection getting all the props it needs to work correctly? */}
-      <LikeSection likePost={() => likePost(post.id)} />
-      {/* Comments also wants its props! */}
-      <Comments />
+        <div className='post-image-wrapper'>
+            <img
+                alt='post thumbnail'
+                className='post-image'
+                src={props.post.imageUrl}
+            />
+        </div>
+        {/* Is LikeSection getting all the props it needs to work correctly? */}
+        <LikeSection likePost={() => props.likePost(props.post.id)} />
+        {/* Comments also wants its props! */}
+        <Comments />
     </div>
-  );
+);
 };
 
 export default Post;
