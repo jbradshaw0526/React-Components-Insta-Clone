@@ -20,6 +20,7 @@ const App = () => {
 
   const [posts, setPosts] = useState(dummyData);
   const [searchTerm, setSearchTerm] = useState("");
+  const [initialPosts] = useState(dummyData);
 
     const likePost = (postId) => {
     /*
